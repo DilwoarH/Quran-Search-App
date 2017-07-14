@@ -1,7 +1,7 @@
 # Quran Search App
 
 ## Demo
-http://quran-search.dilwoar.co.uk
+http://quran.dilwoar.co.uk
 
 
 ## Initialisation
@@ -18,5 +18,8 @@ Search API
 Other Refs
 - https://quran.com/
 - https://projects.lukehaas.me/css-loaders/
+- https://www.creative-tim.com/product/material-kit
+- http://getbootstrap.com/
+- http://jquery.com/
 
 ```
