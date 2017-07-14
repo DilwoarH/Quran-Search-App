@@ -17,5 +17,6 @@ Search API
 
 Other Refs
 - https://quran.com/
+- https://projects.lukehaas.me/css-loaders/
 
 ```
