@@ -63,12 +63,21 @@
 }
 
 /* SEARCH */
-@media only screen and (max-width: 767px) {
+.search {
+  padding: 10px;
+  text-align: center;
+}
+
+#search {
+  text-align: center;
+}
+
+/* @media only screen and (max-width: 767px) {
     #searchBtn {
         width: 100%;
         margin-top: 10px;
     }
-}
+} */
 
 
 /* SEARCH RESULTS */
