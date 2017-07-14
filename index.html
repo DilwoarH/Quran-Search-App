@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Quran Search</title>
+        <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body class="container">
+        <h1>Quran Search</h1>
+
+        <div class="search form-inline">
+            <input type="text" id="search" class="form-control" placeholder="Enter Search Here"/>
+            <button id="searchBtn" class="btn btn-success">Search</button>
+        </div>
+
+        <div class="searchResults">
+            <h2>Results</h2>
+            <div id="searchResults">No Search Performed.</div>
+        </div>
+
+        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="./QuranApi.class.js"></script>
+        <script src="./SearchController.class.js"></script>
+        <script src="./search.js"></script>
+
+    </body>
+</html>
