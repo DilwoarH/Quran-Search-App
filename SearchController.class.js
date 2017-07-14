@@ -12,6 +12,7 @@ class SearchController
     }
 
     searchBtnAction() {
+        this.displayLoading();
         var searchText = $('#search').val();
         var quranApi = new QuranApi();
         
@@ -58,8 +59,19 @@ class SearchController
         return;
     }
 
+    displayLoading() {
+        $('.loader').show();
+    }
+
+    hideLoading() {
+        $('.loader').hide();
+    }
+
+
     displayResults( resultHTML ) {
         $('#searchResults').html( resultHTML );
+        $('.searchResults').show();
+        this.hideLoading();
     }
 
 }

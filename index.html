@@ -2,18 +2,22 @@
     <head>
         <title>Quran Search</title>
         <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./index.css">
     </head>
     <body class="container">
         <h1>Quran Search</h1>
-
-        <div class="search form-inline">
+        <hr>
+        
+        <div class="search text-center form-inline well well-lg">
             <input type="text" id="search" class="form-control" placeholder="Enter Search Here"/>
             <button id="searchBtn" class="btn btn-success">Search</button>
+            <div class="loader">Loading...</div>
         </div>
+        <hr>
 
         <div class="searchResults">
             <h2>Results</h2>
-            <div id="searchResults">No Search Performed.</div>
+            <div id="searchResults">No search started.</div>
         </div>
 
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
