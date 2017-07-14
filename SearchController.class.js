@@ -39,7 +39,7 @@ class SearchController
                                 ${match.text}
                             </div>
                             <div class="panel-footer">
-                                ${match.surah.number}:${match.numberInSurah} - ${match.surah.englishName}
+                                ${match.surah.number}:${match.numberInSurah} - ${match.surah.englishName} - <a href="https://quran.com/${match.surah.number}/${match.numberInSurah}" target="_blank">See more</a>
                             </div>
                         </div>
                     `;

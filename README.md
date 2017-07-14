@@ -10,3 +10,12 @@ http://quran-search.dilwoar.co.uk
 npm install;
 ```
 
+## References
+```
+Search API 
+- http://api.alquran.cloud/
+
+Other Refs
+- https://quran.com/
+
+```
