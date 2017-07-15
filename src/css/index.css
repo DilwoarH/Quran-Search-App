@@ -1,5 +1,6 @@
-.loader {
+.app-content .app-section .loader {
     display: none;
+    margin: 100px auto;
 }
 
 .loader,
