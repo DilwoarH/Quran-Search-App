@@ -2,7 +2,7 @@ class SearchController
 {
 
     constructor() {
-
+        this.searchBtnListenerInit();
     }
 
     searchBtnListenerInit() {
@@ -15,15 +15,21 @@ class SearchController
         this.displayLoading();
         var searchText = $('#search').val();
         var quranApi = new QuranApi();
-        
+
+        if ( searchText.length < 3 )
+        {
+            this.displayResults( `<div class="text red">Search text must be 3 or more letters.</div>` );
+            return;
+        }
+
         quranApi.search( searchText )
         .then( 
             ( results ) => {
-                console.info('success');
+                //console.info('success');
                 
                 if ( !results )
                 {
-                    this.displayResults( `<div>No Results Found</div>` );
+                    this.displayResults( `<div class="text">No Verses Found.</div>` );
                     return;
                 }
 
@@ -46,13 +52,22 @@ class SearchController
                     `;
                 }
 
-                this.displayResults( resultHTML );
+                this.displayResults( resultHTML, len );
 
             },
             ( err ) => {
-                console.info('error');
-                console.error(err);
-            
+                //console.info('error');
+                //console.error(err);
+                App.dialog({
+                    title        : 'Network Error',
+                    text         : 'There was an error while searching. Try again in a bit.',
+                    okButton     : 'Try Again',
+                    //cancelButton : 'Cancel'
+                }, function (tryAgain) {
+                    if (tryAgain) {
+                        window.location.reload();
+                    }
+                });
             }
         );
         
@@ -68,8 +83,9 @@ class SearchController
     }
 
 
-    displayResults( resultHTML ) {
+    displayResults( resultHTML, len = 0 ) {
         $('#searchResults').html( resultHTML );
+        $('#resultCount').html(`${len}`);
         $('.searchResults').show();
         this.hideLoading();
     }

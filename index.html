@@ -1,32 +1,44 @@
 <html>
     <head>
         <title>Quran Search</title>
-        <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./css/index.css">
-        <link rel="stylesheet" href="./css/material-kit.css">
+        <meta name="viewport" content="width=device-width,
+                                   initial-scale=1.0,
+                                   maximum-scale=1.0,
+                                   user-scalable=no,
+                                   minimal-ui">
+        <link rel="stylesheet" href="./lib/appjs/app.min.css">
+        <link rel="stylesheet" href="./src/css/index.css">
     </head>
     <body class="container">
-        <h1>Quran Search</h1>
-        <hr>
         
-        <div class="search text-center form card card-nav-tabs">
-            <div class="form-group">
-                <input type="text" id="search" class="form-control" placeholder="Enter Search Here"/>
-            </div>
-            <button id="searchBtn" class="btn btn-primary">Search</button>
-            <div class="loader">Loading...</div>
+        <div class="app-page" data-page="search">
+        <div class="app-topbar teal">
+            <div class="app-title">Quran Search</div>
         </div>
-        <hr>
+        <div class="app-content app-scrollable">
+            
+            <div class="search text-center form app-section">
+ 
+                <!-- in your app-content -->
+                <input type="search" class="app-input " id="search" placeholder="Search any word in the quran here..."> <!-- will have search icon -->
 
-        <div class="searchResults">
-            <h2>Results</h2>
-            <div id="searchResults">No search started.</div>
+                <div id="searchBtn" class="app-button green">Search</div>
+                <div class="loader">Loading...</div>
+            </div>
+
+            <div class="searchResults app-list app-section">
+                <label>Results Found: <span id="resultCount"></span></label>
+                <div id="searchResults">No search started.</div>
+            </div>
+
+        </div>
         </div>
 
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-        <script src="./js/QuranApi.class.js"></script>
-        <script src="./js/SearchController.class.js"></script>
-        <script src="./js/search.js"></script>
+        <script src="./lib/appjs/app.min.js"></script>
+        <script src="./src/js/QuranApi.class.js"></script>
+        <script src="./src/js/SearchController.class.js"></script>
+        <script src="./src/js/search.js"></script>
 
     </body>
 </html>
