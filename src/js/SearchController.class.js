@@ -30,7 +30,7 @@ class SearchController
 
             App.dialog({
                 title        : 'About Us',
-                text         : 'This is a Open Source Project. If you wish to contibute please see our GitHub Page.',
+                text         : 'This is an Open Source Project. If you wish to contibute please see our GitHub Page.',
                 okButton     : 'Go to GitHub',
                 cancelButton : 'Cancel'
             }, function (goToGithub) {
