@@ -2,6 +2,7 @@ class SearchController
 {
 
     constructor() {
+        this.aboutMeListenerInit();
         this.topBtnListenerInit();
         this.searchBtnListenerInit();
     }
@@ -9,6 +10,23 @@ class SearchController
     topBtnListenerInit() {
         $('#top').on('click', (e) => {
             $('.app-scrollable').scrollTop(0);
+        });
+    }
+
+    aboutMeListenerInit() {
+        $('#about').on('click', (e) => {
+
+            App.dialog({
+                title        : 'About Us',
+                text         : 'This is a Open Source Project. If you wish to contibute please see our GitHub Page.',
+                okButton     : 'Go to GitHub',
+                cancelButton : 'Cancel'
+            }, function (goToGithub) {
+                if (goToGithub) {
+                    window.location.href = 'https://github.com/DilwoarH/Quran-Search-App';
+                }
+            });
+
         });
     }
 
