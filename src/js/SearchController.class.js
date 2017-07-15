@@ -2,8 +2,16 @@ class SearchController
 {
 
     constructor() {
+        this.topBtnListenerInit();
         this.searchBtnListenerInit();
     }
+
+    topBtnListenerInit() {
+        $('#top').on('click', (e) => {
+            $('.app-scrollable').scrollTop(0);
+        });
+    }
+
 
     searchBtnListenerInit() {
         $('#searchBtn').on('click', (e) => {

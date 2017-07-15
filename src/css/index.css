@@ -3,6 +3,22 @@
     margin: 100px auto;
 }
 
+#top {
+    font-weight: 500;
+}
+
+.bismillah {
+    text-align: center;
+    background: none;
+    border-bottom: none;
+}
+
+.bismillah img {
+    width:30%; 
+    max-width:90%; 
+    margin: 0 auto;
+}
+
 .loader,
 .loader:before,
 .loader:after {
