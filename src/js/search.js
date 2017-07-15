@@ -1,5 +1,7 @@
 function HomeController(page) {
+
 }
+
 HomeController.prototype.onShow = function () {
   new SearchController();
 };

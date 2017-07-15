@@ -5,6 +5,18 @@ class SearchController
         this.aboutMeListenerInit();
         this.topBtnListenerInit();
         this.searchBtnListenerInit();
+        this.showQueryFromUrl();   
+    }
+
+    showQueryFromUrl() {
+
+        var _query = this.getParameterByName('q');
+        if ( _query ) {
+            $('#search').val( _query );
+            this.searchBtnAction( _query );
+        }
+        
+        return;
     }
 
     topBtnListenerInit() {
@@ -33,13 +45,17 @@ class SearchController
 
     searchBtnListenerInit() {
         $('#searchBtn').on('click', (e) => {
-            this.searchBtnAction();
+            var _search = $('#search').val();
+            this.searchBtnAction( _search );
         });
     }
 
-    searchBtnAction() {
+    searchBtnAction( _search ) {
         this.displayLoading();
-        var searchText = $('#search').val();
+        //update query string
+        this.updateQueryString( _search );
+
+        var searchText = _search;
         var quranApi = new QuranApi();
 
         if ( searchText.length < 3 )
@@ -114,6 +130,23 @@ class SearchController
         $('#resultCount').html(`${len}`);
         $('.searchResults').show();
         this.hideLoading();
+    }
+
+    updateQueryString( newSearch ) {
+        if (history.pushState) {
+            var newurl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?q=${newSearch}`;
+            window.history.pushState({path:newurl},'',newurl);
+        }
+    }
+
+    getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 
 }
