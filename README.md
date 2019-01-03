@@ -1,7 +1,7 @@
 # Quran Search App
 
 ## Demo
-http://quran.dilwoar.co.uk/
+https://quran-search.netlify.com/
 
 
 ## Initialisation
