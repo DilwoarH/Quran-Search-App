@@ -1,5 +1,8 @@
 # Quran Search App
 
+## Blog post
+https://medium.com/@dilwoar.hussain/search-any-word-in-the-quran-a3110e877613
+
 ## Demo
 https://quran-search.netlify.com/
 
