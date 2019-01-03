@@ -3,13 +3,6 @@
 ## Demo
 https://quran-search.netlify.com/
 
-
-## Initialisation
-
-```
-npm install;
-```
-
 ## References
 ```
 Search API 
